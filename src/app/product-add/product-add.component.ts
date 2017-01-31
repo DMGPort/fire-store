@@ -15,14 +15,16 @@ export class ProductAddComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit(name, photo){
+  onSubmit(name, photo, price, discount){
     if(name.value != "" && photo.value != ""){
-      this.httpService.addProduct(name.value, photo.value);
-        setTimeout(() => {
-          name.value = "";
-          photo.value = "";
-          name.focus();
-        }, 300)
+      if(price.value != 0 && discount.value >= 0){
+        this.httpService.addProduct(name.value, photo.value, price.value, discount.value);
+          setTimeout(() => {
+            name.value = "";
+            photo.value = "";
+            name.focus();
+          }, 300)
+      }
     }
 
   }

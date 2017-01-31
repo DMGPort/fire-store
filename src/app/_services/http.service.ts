@@ -11,8 +11,8 @@ export class HttpService {
     private myDataService : MyDataService
   ) { }
 
-  addProduct(name :string, photo: string){
-    const body = JSON.stringify({name: name, photo: photo})
+  addProduct(name :string, photo: string, price:number, discount:number){
+    const body = JSON.stringify({name: name, photo: photo, price: price, discount: discount})
     return this.http.post(this.myDataService.productUrl, body)
                .map((res: Response) => res.json())
                .subscribe();

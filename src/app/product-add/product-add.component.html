@@ -7,7 +7,13 @@
     <md-input-container>
       <input md-input type="text" #photo placeholder="Photo Url" required autocomplete="off"/>
     </md-input-container><br />
-    <button md-raised-button (click)="onSubmit(name, photo)">Submit</button>
+    <md-input-container>
+      <input md-input type="number" step="250" #price placeholder="Price" required autocomplete="off"/>
+    </md-input-container><br />
+    <md-input-container>
+      <input md-input type="number" step="250" #discount placeholder="Discount" required autocomplete="off"/>
+    </md-input-container><br />
+    <button md-raised-button (click)="onSubmit(name, photo, price, discount)">Submit</button>
   </form>
 </md-card>
 </div>
