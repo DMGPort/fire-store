@@ -1,0 +1,19 @@
+<div class="col-md-6">
+<md-card >
+  <form>
+    <md-input-container>
+      <input md-input type="text" #name placeholder="Name" md-maxlength="50" required autocomplete="off"/>
+    </md-input-container><br />
+    <md-input-container>
+      <input md-input type="text" #photo placeholder="Photo Url" required autocomplete="off"/>
+    </md-input-container><br />
+    <button md-raised-button (click)="onSubmit(name, photo)">Submit</button>
+  </form>
+</md-card>
+</div>
+<div class="col-md-6">
+<md-card>
+  <img md-card-image src="{{ photo.value }}">
+</md-card>
+</div>
+<div class="clearfix"></div>
