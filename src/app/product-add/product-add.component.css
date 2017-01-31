@@ -1,0 +1,28 @@
+.child {
+    padding: 3em;
+    text-align: center;
+    height: 440px;
+}
+.child > img {
+    width: auto;
+    height: 300px;
+}
+.noticeable{
+    color: red;
+}
+.heading{
+    font-size: 35px;
+    font-family: 'Merriweather', serif;    
+    margin: 0 0;
+    color: grey;
+}
+#newProduct{
+    font-size: 3em;
+    opacity: 0.5;
+    transform: rotate(-90deg);
+    bottom: 3em;
+    left: -1em;
+}
+#smallGrid{
+    zoom: 30%;
+}

@@ -21,4 +21,8 @@ export class ProductGridComponent implements OnInit {
 
   }
 
+  toDetails(name: string){
+    console.log(name);
+  }
+
 }

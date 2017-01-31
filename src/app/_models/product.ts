@@ -3,4 +3,6 @@ export class Product {
     photo: string;
     price: number;
     discount: number;
+    dprice: number;
+    description: string;
 }
