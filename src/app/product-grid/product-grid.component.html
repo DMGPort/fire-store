@@ -1,6 +1,6 @@
 <div class="fam">
     <div class="mother">
-        <md-card class="child" *ngFor="let product of products | async" (click)="toDetails(product.name)">
+        <md-card class="child" *ngFor="let product of myDataService.products | async" (click)="toDetails(product)" routerLink="/product/details">
             <img md-card-image [src]="product.photo">
             <md-card-title><b class="heading">{{ product.name}}</b></md-card-title>
             <md-card-content>

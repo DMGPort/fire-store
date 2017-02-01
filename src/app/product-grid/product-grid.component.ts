@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
-import { Product } from '../_models/product';
+import { MyDataService } from '../_services/mydata.service';
 
 @Component({
   selector: 'app-product-grid',
@@ -9,20 +8,16 @@ import { Product } from '../_models/product';
 })
 export class ProductGridComponent implements OnInit {
 
-  products: FirebaseListObservable<Product[]>;
-
   constructor(
-    private af: AngularFire
-    ) {
-    this.products = af.database.list('/product');
-  }
+    private myDataService: MyDataService
+    ) {}
 
   ngOnInit() {
 
   }
 
-  toDetails(name: string){
-    console.log(name);
+  toDetails(product){
+    this.myDataService.setActiveProduct(product);
   }
 
 }

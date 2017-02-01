@@ -1,0 +1,11 @@
+.content {
+    width: fit-content;
+    height: 3em;
+    margin-left: auto;
+    margin-right: auto;
+}
+#small{
+    overflow-wrap: auto;
+    margin-bottom: 50px;
+    margin-top: -45px;
+}

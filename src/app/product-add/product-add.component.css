@@ -1,7 +1,9 @@
+
 .child {
     padding: 3em;
     text-align: center;
-    height: 440px;
+    height: 460px;
+    width: 440px;
 }
 .child > img {
     width: auto;
@@ -22,7 +24,4 @@
     transform: rotate(-90deg);
     bottom: 3em;
     left: -1em;
-}
-#smallGrid{
-    zoom: 30%;
 }
