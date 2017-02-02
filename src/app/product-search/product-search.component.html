@@ -3,7 +3,7 @@
       <input md-input placeholder="Search Store" (blur)="onBlur()" [(ngModel)]="searchTerm" type="text" autocomplete="off">
     </md-input-container>
     <ul>
-      <li *ngFor="let product of myDataService.searchList | search:searchTerm">
+      <li *ngFor="let product of myDataService.searchArray | search:searchTerm">
         <span>{{ product.name }}</span>
       </li> 
     </ul>

@@ -8,31 +8,38 @@ import { MdDialogModule } from '@angular/material';
 import { SearchPipe } from './product-search/search-filter.pipe';
 
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './_app-routing/app-routing.module';
-
 import { MyDataService } from './_services/mydata.service';
 import { HttpService } from './_services/http.service';
+import { AppRoutingModule } from './_app-routing/app-routing.module';
+import { RoutingService } from './_app-routing/routing.service';
+
 import { ProductGridComponent } from './product-grid/product-grid.component';
 import { ProductAddComponent } from './product-add/product-add.component';
-import { StoreComponent } from './store/store.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ProductSearchComponent } from './product-search/product-search.component';
 import { CategoriesNavComponent } from './categories-nav/categories-nav.component';
-import { SideNavComponent } from './side-nav/side-nav.component';
+import { CategoriesNavBurgerComponent } from './categories-nav-burger/categories-nav-burger.component';
+import { ProductAddCategoryComponent } from './product-add-category/product-add-category.component';
+import { CategoriesGridComponent } from './categories-grid/categories-grid.component';
+import { LogoComponent } from './logo/logo.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
     SearchPipe,
     AppComponent,
-    StoreComponent,
     ProductAddComponent,
     ProductGridComponent,
     ProductListComponent,
     ProductDetailComponent,
     ProductSearchComponent,
     CategoriesNavComponent,
-    SideNavComponent
+    CategoriesNavBurgerComponent,
+    ProductAddCategoryComponent,
+    CategoriesGridComponent,
+    LogoComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
@@ -48,10 +55,11 @@ import { SideNavComponent } from './side-nav/side-nav.component';
       storageBucket: ""
     })
   ],
-  providers: [ MyDataService, HttpService ],
+  providers: [ MyDataService, HttpService, RoutingService ],
   bootstrap: [AppComponent],
   entryComponents: [ 
-                      ProductAddComponent    
-                      ]
+                    ProductAddComponent,
+                    ProductAddCategoryComponent  
+                   ]
 })
 export class AppModule { }

@@ -13,7 +13,7 @@ export class ProductGridComponent implements OnInit {
     ) {}
 
   ngOnInit() {
-
+    console.log(this.myDataService.products)
   }
 
   toDetails(product){

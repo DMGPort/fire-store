@@ -15,13 +15,12 @@ export class ProductSearchComponent implements OnInit {
   
   productList: Product[];
   ngOnInit() {
-    this.productList = this.myDataService.searchList;
+    this.myDataService.buildSearchList();
   }
 
   searchTerm: string;
   onBlur(){
     setTimeout(() => {
-    this.myDataService.getSearchList();
     this.searchTerm = '';
     }, 200);
   }

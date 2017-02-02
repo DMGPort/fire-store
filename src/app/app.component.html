@@ -1,13 +1,16 @@
 <div id="top">
-    <button class="btn" md-raised-button (click)="sidenav.open()" id="open-menu-button">Menu</button>
-    <app-product-search (click)="sidenav.close()"></app-product-search>
-    <app-categories-nav (click)="sidenav.close()"></app-categories-nav>
-</div>
-<md-sidenav-container class="main-container">
-    <md-sidenav mode="over" #sidenav class="sidenav">
-        <app-side-nav (click)="sidenav.close()"></app-side-nav>
-    </md-sidenav>
-    <div class="app-content">
-        <router-outlet></router-outlet>
+    <div class="nav">
+        <app-logo class="logo"></app-logo>
+        <app-menu class="menuButton"></app-menu>
+        <div class="catNavDiv">
+            <app-categories-nav class="normalCat"></app-categories-nav>
+            <app-categories-nav-burger class="burgerCat"></app-categories-nav-burger>
+        </div>
+        <app-product-search></app-product-search>
     </div>
-</md-sidenav-container>
+    <div class="myfade"></div>
+</div>
+<div class="app-content">
+    <router-outlet></router-outlet>
+</div>
+

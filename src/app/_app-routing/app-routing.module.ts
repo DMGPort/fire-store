@@ -2,12 +2,14 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
-import { StoreComponent } from '../store/store.component';
+import { CategoriesGridComponent } from '../categories-grid/categories-grid.component';
 import { ProductDetailComponent } from '../product-detail/product-detail.component';
+import { ProductGridComponent } from '../product-grid/product-grid.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/store', pathMatch: 'full' },
-    { path: 'store', component: StoreComponent },
+    { path: 'store', component: CategoriesGridComponent },
+    { path: 'store/:category', component: ProductGridComponent },
     { path: 'product/details', component: ProductDetailComponent },
 ];
 

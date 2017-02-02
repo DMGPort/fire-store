@@ -1,8 +1,6 @@
-<div id="small">
-  <div class="content">
-        <button class="btn" md-raised-button>Categories</button>
-        <button class="btn" md-raised-button>Soon</button>
-        <button class="btn" md-raised-button>To Come</button>
-        <button class="btn" md-raised-button>Here</button>
-  </div>
+<div class="bar">
+      <button class="btn" md-raised-button *ngFor="let category of myDataService.categories | async">
+        {{ category.name}}
+      </button>
 </div>
+

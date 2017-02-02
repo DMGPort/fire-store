@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MyDataService } from '../_services/mydata.service';
 
 @Component({
   selector: 'app-categories-nav',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriesNavComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private myDataService: MyDataService
+    ) {}
 
   ngOnInit() {
   }

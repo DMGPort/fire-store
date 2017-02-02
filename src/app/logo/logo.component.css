@@ -1,0 +1,11 @@
+#logo{
+    font-family: 'Pattaya', sans-serif;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+#logo:hover{
+    cursor: pointer;
+    color: white;
+    text-shadow: 2px 2px 8px Black;
+}

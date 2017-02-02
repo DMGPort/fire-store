@@ -14,7 +14,7 @@ export class SearchPipe implements PipeTransform{
 
     transform(products: any, searchTerm: string){
         if(searchTerm === undefined || searchTerm == "") return null;
-        return this.myDataService.searchList.filter(function(product){
+        return this.myDataService.searchArray.filter(function(product){
             return product.name.toLowerCase().includes(searchTerm.toLowerCase());
         })
     }

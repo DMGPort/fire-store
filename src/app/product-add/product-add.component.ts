@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../_services/http.service';
+import { MyDataService } from '../_services/mydata.service';
 
 @Component({
   selector: 'app-product-add',
@@ -9,19 +10,19 @@ import { HttpService } from '../_services/http.service';
 export class ProductAddComponent implements OnInit {
 
   constructor(
-        private httpService : HttpService
+        private httpService : HttpService,
+        private myDataService: MyDataService
   ) { }
 
   ngOnInit() {
-    
   }
 
-  onSubmit(name, photo, price, discount, description){
+  onSubmit(category, name, photo, price, discount, description){
     if(name.value != "" && photo.value != ""){
       if(price.value != 0 && discount.value >= 0){
         let dprice: number = price.value - (price.value * discount.value / 100);
         let dateAdded =  new Date();
-        this.httpService.addProduct(name.value, photo.value, price.value, discount.value, dprice, description.value, dateAdded);
+        this.httpService.addProduct(category.value ,name.value, photo.value, price.value, discount.value, dprice, description.value, dateAdded);
           name.focus();         
           setTimeout(() => {
             name.value = null;
