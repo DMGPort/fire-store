@@ -16,7 +16,7 @@ export class CategoriesNavBurgerComponent implements OnInit {
 
   ngOnInit() {
   }
-  
+
   toCategory(category){
     this.myDataService.setActiveCategory(category);
     this.routingService.toProductGrid(category.name)

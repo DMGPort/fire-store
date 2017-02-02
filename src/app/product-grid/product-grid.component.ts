@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MyDataService } from '../_services/mydata.service';
+import { RoutingService } from '../_app-routing/routing.service';
 
 @Component({
   selector: 'app-product-grid',
@@ -9,11 +10,12 @@ import { MyDataService } from '../_services/mydata.service';
 export class ProductGridComponent implements OnInit {
 
   constructor(
-    private myDataService: MyDataService
+    private myDataService: MyDataService,
+    private routingService: RoutingService
     ) {}
 
   ngOnInit() {
-    console.log(this.myDataService.products)
+    this.myDataService.activeCategory.value ? null : this.routingService.goHome();
   }
 
   toDetails(product){

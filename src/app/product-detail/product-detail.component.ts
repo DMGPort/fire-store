@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Location }  from '@angular/common';
 import { MyDataService } from '../_services/mydata.service';
-import { Product } from '../_models/product';
+import { RoutingService } from '../_app-routing/routing.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -11,18 +10,15 @@ import { Product } from '../_models/product';
 export class ProductDetailComponent implements OnInit {
 
   constructor(
-    private location: Location,
-    private myDataService:  MyDataService
+    private myDataService:  MyDataService,
+    private routingService: RoutingService
   ) { }
-
-  product: Product;
+  
   ngOnInit() {
-    this.product = this.myDataService.activeProduct.value;
-    this.product ? null : this.goBack();
+    this.myDataService.activeProduct.value ? null : this.routingService.goHome();
   }
 
   goBack(){
-    this.location.back();
+    this.routingService.goBack();
   }
-
 }

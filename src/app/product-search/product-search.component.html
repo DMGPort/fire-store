@@ -4,7 +4,7 @@
     </md-input-container>
     <ul>
       <li *ngFor="let product of myDataService.searchArray | search:searchTerm">
-        <span>{{ product.name }}</span>
+        <span (click)="gotoDetail(product)">{{ product.name }}</span>
       </li> 
     </ul>
 </div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MyDataService } from '../_services/mydata.service';
 import { Product } from '../_models/product';
+import { RoutingService } from '../_app-routing/routing.service';
 
 @Component({
   selector: 'app-product-search',
@@ -10,7 +11,8 @@ import { Product } from '../_models/product';
 export class ProductSearchComponent implements OnInit {
 
   constructor(
-    private myDataService: MyDataService
+    private myDataService: MyDataService,
+    private routingService: RoutingService
     ) {}
   
   productList: Product[];
@@ -19,10 +21,14 @@ export class ProductSearchComponent implements OnInit {
   }
 
   searchTerm: string;
-  onBlur(){
+  onBlur(){  
     setTimeout(() => {
     this.searchTerm = '';
     }, 200);
   }
 
+  gotoDetail(product){
+    this.myDataService.setActiveProduct(product);
+    this.routingService.toDetails();
+  }
 }
