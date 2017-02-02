@@ -2,7 +2,7 @@
   Categories
 </button>
 <md-menu #appMenu="mdMenu">
-  <span md-menu-item *ngFor="let category of myDataService.categories | async">
+  <span md-menu-item *ngFor="let category of myDataService.categories | async" (click)="toCategory(category)">
     <button md-raised-button>{{ category.name }}</button>
   </span>
 </md-menu>
