@@ -58,6 +58,7 @@ export class MyDataService {
 /*-------------------- Search Service Start ------- */
   searchArray: Product[] = [];
   buildSearchList(){
+    this.searchArray = [];
       this.getCat()
         .subscribe(category =>{
         for(let x = 0; x < category.length ; x++ ){
