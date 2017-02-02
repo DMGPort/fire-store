@@ -27,7 +27,11 @@ export class HttpService {
     const body = JSON.stringify({name: name, photo: photo, description:description})
     return this.http.post(this.myDataService.storeUrl +"/categories.json", body)
                .map((res: Response) => res.json())
-               .subscribe();
+               .subscribe(
+                err => console.log(err),
+                () => this.myDataService.buildSearchList()
+      );
+               
   }
 
 }
