@@ -29,6 +29,6 @@ export class ProductSearchComponent implements OnInit {
 
   gotoDetail(product){
     this.myDataService.setActiveProduct(product);
-    this.routingService.toDetails();
+    this.routingService.toDetails(this.myDataService.activeCategory.value.name);
   }
 }

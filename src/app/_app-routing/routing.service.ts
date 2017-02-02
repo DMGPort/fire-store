@@ -15,11 +15,11 @@ export class RoutingService {
   }
 
   toProductGrid(category){
-    this.router.navigate(["store/" + category ]);
+    this.router.navigate(["store/" + category.toLowerCase() ]);
   }
 
-  toDetails(){
-    this.router.navigate(["/product/details" ]);
+  toDetails(category){
+    this.router.navigate(["/store/" + category.toLowerCase() + "/details" ]);
   }
   
   goBack(){

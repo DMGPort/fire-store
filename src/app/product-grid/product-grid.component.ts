@@ -20,6 +20,7 @@ export class ProductGridComponent implements OnInit {
 
   toDetails(product){
     this.myDataService.setActiveProduct(product);
+    this.routingService.toDetails(this.myDataService.activeCategory.value.name);
   }
 
 }
