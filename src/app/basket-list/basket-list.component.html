@@ -2,22 +2,36 @@
   <md-card-content>
     <md-list>
       <h3 md-subheader>Basket</h3>
-      <md-list-item *ngFor="let product of myDataService.basketList">
+      <md-list-item *ngFor="let product of myDataService.basketList" class="col-sm-10 col-sm-offset-2">
+        <div class="info">
         <h3 md-line> {{ product.name }} </h3>
-        <span md-line> {{ product.dprice }} </span>
-        <img md-list-avatar [src]="product.photo">
+        <span md-line>
+          <del *ngIf="product.discount != 0">{{ product.price | number:'1.0-0' }}</del>
+          <b>{{ product.dprice | number:'1.0-0' }}</b>
+          kr.
+        </span>
+        </div>
+        <div>
+          <button class="imageAndQty" md-fab md-icon-button (click)="toProductDetails(product)">
+            <img md-list-avatar [src]="product.photo">
+            <span *ngIf="product.qty > 1">     
+              <span class="fa fa-times" aria-hidden="true"></span>
+              <b>{{ product.qty }}</b>
+            </span>
+          </button>
+        </div>       
         <span class="actions">
-          <a (click)="addToBasket(product, product.Id); $event.stopPropagation()" class="btn btn-sm"><i class="glyphicon glyphicon-plus"></i></a>
-          <a (click)="removeFromBasket(product, product.Id); $event.stopPropagation()" class="btn btn-sm"><i class="glyphicon glyphicon-minus"></i></a>
+          <a (click)="addToBasket(product); $event.stopPropagation()" class="btn btn-sm"><i class="glyphicon glyphicon-plus"></i></a>
+          <a (click)="removeFromBasket(product); $event.stopPropagation()" class="btn btn-sm"><i class="glyphicon glyphicon-minus"></i></a>
         </span>
       </md-list-item>
     </md-list>
   </md-card-content>
 </md-card>
 <md-card class="col-sm-8 col-sm-offset-2">
-  <md-card-content class="row">  
+  <md-card-content class="col-sm-10 col-sm-offset-2">  
     <md-card class="totals">
-      <md-card-content>3</md-card-content>
+      <md-card-content>{{ myDataService.numberInBasket }}</md-card-content>
       <md-card-subtitle>Items</md-card-subtitle>
     </md-card>
     <md-card class="totals">

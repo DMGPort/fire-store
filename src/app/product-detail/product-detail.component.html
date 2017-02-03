@@ -3,9 +3,10 @@
     <md-card>
       <md-card-content>
         <img md-card-image src="{{ myDataService.activeProduct.value.photo }}">
-      <md-card-title>
-      </md-card-title>
       </md-card-content>
+      <md-card-actions class="actions">
+        <button class="btn btn-info" (click)="addToCart(myDataService.activeProduct)">Add To Cart</button>
+      </md-card-actions>
     </md-card>
   </div>
   <div class="col-xs-offset-2 col-xs-8 col-sm-offset-0 col-sm-6">
@@ -18,16 +19,11 @@
         {{ myDataService.activeProduct.value .description}}
       </md-card-content>
       <md-card-subtitle>
-        <div class="col-xs-12 col-md-5">
-          <h2 class="noticable" *ngIf="myDataService.activeProduct.value .discount > 0"> -{{ myDataService.activeProduct.value .discount }}% </h2>
-          <del *ngIf="myDataService.activeProduct.value.discount != 0">{{ myDataService.activeProduct.value .price | number:'1.0-0' }}</del>
-          <b>{{ myDataService.activeProduct.value .dprice | number:'1.0-0' }}</b>
-          kr.
-        </div>
-      </md-card-subtitle><br />
-      <md-card-actions>
-        <button class="btn btn-info" (click)="addToCart(myDataService.activeProduct)">Add To Cart</button>
-      </md-card-actions>
+        <b class="noticable" *ngIf="myDataService.activeProduct.value .discount > 0"> -{{ myDataService.activeProduct.value .discount }}% </b>
+        <del *ngIf="myDataService.activeProduct.value.discount != 0">{{ myDataService.activeProduct.value .price | number:'1.0-0' }}</del>
+        <b>{{ myDataService.activeProduct.value .dprice | number:'1.0-0' }}</b>
+        kr.
+      </md-card-subtitle>
     </md-card>
   </div>
 </md-card>

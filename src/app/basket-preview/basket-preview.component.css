@@ -1,8 +1,10 @@
 .btn{
     background-color: white;
+    color: dimgray;
 }
 .btn:hover{
     background-color: dimgray;
+    color: white;
 }
 .fa{
     font-size: 30px;

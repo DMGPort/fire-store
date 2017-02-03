@@ -6,4 +6,5 @@ export class Product {
     dprice: number;
     description: string;
     dateAdded: any;
+    qty: number;
 }

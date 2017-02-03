@@ -36,7 +36,10 @@ export class MyDataService {
   basketList: Product[] = [];
   numberInBasket: number = 0;
   updateNumberInBasket(){
-    this.numberInBasket = this.basketList.length;
+    this.numberInBasket = 0;
+    for(let x = 0; x < this.basketList.length; x++){
+        this.numberInBasket += this.basketList[x].qty;
+    }
   }
 /*---------------Active Category Start ---------------*/
   categoryName: string = "";

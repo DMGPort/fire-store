@@ -5,22 +5,13 @@
     font-size: 3em;
 }
 .actions{
-    clear: right;
+    width: fit-content;
+    margin-left: auto;
 }
 .noticable{
     color: red;
 }
-#small-comment{
-    display: none;
-}
 @media(max-width: 768px){
-    #big-comment{
-        visibility: hidden;
-        display: none;
-    }
-    #small-comment{
-        display: inline-block;
-    }
     .main{
         margin-top: 120px;
     }

@@ -26,7 +26,7 @@
   margin-right: 8%;
 }
 .topFade{
-  height: 25px;
+  height: 10px;
   z-index: 700;
   width: 100%;
   background: white; /* For browsers that do not support gradients */

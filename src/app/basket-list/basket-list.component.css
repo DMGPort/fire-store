@@ -6,11 +6,40 @@ md-list-item{
     margin-left: auto;
     margin-right: auto;
 }
+.shortInfo{
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+.glyphicon{
+    font-size: 6px;
+}
 .glyphicon-minus{
     color: red;
 }
 .btn:hover .glyphicon-minus{
     color: white;
+}
+.info{
+    margin-right: auto;
+    margin-left: 5%;
+    padding-bottom: 10px;
+}
+@media(max-width:320px){
+    .info{
+        display: none;
+    }
+}
+.imageAndQty{
+    zoom: 115%;
+    margin-right: 20px;
+    background-color: white;
+    color: black;
+    width: 90px;
+    font-size: 17px;
+}
+.fa-times{
+    font-size: 10px;    
 }
 .totals{
     float: left;

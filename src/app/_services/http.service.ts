@@ -16,7 +16,7 @@ export class HttpService {
       description = this.myDataService.defaultDescription;
     }
     let dprice: number = price - (price * discount / 100);
-    const body = JSON.stringify({name: name, photo: photo, price: +price, discount: +discount, dprice: dprice, description:description, dateAdded: dateAdded})
+    const body = JSON.stringify({name: name, photo: photo, price: +price, discount: +discount, dprice: dprice, description:description, dateAdded: dateAdded, qty:1 })
     return this.http.post(this.myDataService.storeUrl +"/"+ category +".json", body)
                .map((res: Response) => res.json())
                .subscribe();
