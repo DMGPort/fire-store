@@ -1,0 +1,39 @@
+<md-card class="col-sm-8 col-sm-offset-2">
+  <md-card-content>
+    <md-list>
+      <h3 md-subheader>Basket</h3>
+      <md-list-item *ngFor="let product of myDataService.basketList">
+        <h3 md-line> {{ product.name }} </h3>
+        <span md-line> {{ product.dprice }} </span>
+        <img md-list-avatar [src]="product.photo">
+        <span class="actions">
+          <a (click)="addToBasket(product, product.Id); $event.stopPropagation()" class="btn btn-sm"><i class="glyphicon glyphicon-plus"></i></a>
+          <a (click)="removeFromBasket(product, product.Id); $event.stopPropagation()" class="btn btn-sm"><i class="glyphicon glyphicon-minus"></i></a>
+        </span>
+      </md-list-item>
+    </md-list>
+  </md-card-content>
+</md-card>
+<md-card class="col-sm-8 col-sm-offset-2">
+  <md-card-content class="row">  
+    <md-card class="totals">
+      <md-card-content>3</md-card-content>
+      <md-card-subtitle>Items</md-card-subtitle>
+    </md-card>
+    <md-card class="totals">
+      <md-card-content>3</md-card-content>
+      <md-card-subtitle>Subtotal</md-card-subtitle>      
+    </md-card>
+    <md-card class="totals">
+      <md-card-content>3</md-card-content>
+      <md-card-subtitle>VSK (24%)</md-card-subtitle>      
+    </md-card>
+    <md-card class="totals">
+      <md-card-content>3</md-card-content>
+      <md-card-subtitle>Total</md-card-subtitle>      
+    </md-card>
+  </md-card-content>
+  <md-card-actions class="row">
+    <button class="btn" md-raised-button (click)="checkOut()">Checkout</button>
+  </md-card-actions>
+</md-card>

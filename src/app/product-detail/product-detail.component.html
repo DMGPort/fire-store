@@ -24,7 +24,10 @@
           <b>{{ myDataService.activeProduct.value .dprice | number:'1.0-0' }}</b>
           kr.
         </div>
-      </md-card-subtitle>
+      </md-card-subtitle><br />
+      <md-card-actions>
+        <button class="btn btn-info" (click)="addToCart(myDataService.activeProduct)">Add To Cart</button>
+      </md-card-actions>
     </md-card>
   </div>
 </md-card>

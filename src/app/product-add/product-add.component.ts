@@ -20,9 +20,8 @@ export class ProductAddComponent implements OnInit {
   onSubmit(category, name, photo, price, discount, description){
     if(name.value != "" && photo.value != ""){
       if(price.value != 0 && discount.value >= 0){
-        let dprice: number = price.value - (price.value * discount.value / 100);
         let dateAdded =  new Date();
-        this.httpService.addProduct(category.value ,name.value, photo.value, price.value, discount.value, dprice, description.value, dateAdded);
+        this.httpService.addProduct(category.value ,name.value, photo.value, price.value, discount.value, description.value, dateAdded);
           name.focus();         
           setTimeout(() => {
             name.value = null;

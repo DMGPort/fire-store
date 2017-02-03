@@ -1,26 +1,31 @@
-.menuButton{
-  margin-left: 5%;
-}
-.burgerCat{
-  margin-right: 8%;
-}
-#top{
-  top: 0;
+.topContainer{
+  top: -10px;
   width: 100%;
   height: fit-content;
   position: fixed;
   z-index: 800;
 }
-.app-content{
-  margin-top: 8em;
-}
-.nav{
+.top{
   padding-bottom: 10px;
+  padding-top: 10px;
   width: auto;
   height: auto;
   background: white;
 }
-.myfade{
+.menuButton{
+  margin-left: 5%;
+}
+.categoriesNavBar{
+  width: fit-content;
+  height: 3em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -2.6em;
+}
+.burgerNav{
+  margin-right: 8%;
+}
+.topFade{
   height: 25px;
   z-index: 700;
   width: 100%;
@@ -30,23 +35,26 @@
   background: -moz-linear-gradient(white, transparent); /* For Firefox 3.6 to 15 */
   background: linear-gradient(white, transparent); /* Standard syntax */
 }
-.catNavDiv{
+.app-content{
+  margin-top: 8em;
+}
+.basketPreview{
   width: fit-content;
-  height: 3em;
-  margin-left: auto;
+  margin-left: 2%;
+  margin-bottom: 3%;
   margin-right: auto;
-  margin-top: -2.6em;
+  z-index: 600;
 }
 @media(min-width:674px){
-    .burgerCat{
+    .burgerNav{
       display: none;
     }
 }
 @media(max-width:673px){
-    .normalCat{
+    .normalNav{
       display: none;
     }
-    .catNavDiv{
+    .categoriesNavBar{
       margin-right: 0;
     }
 }

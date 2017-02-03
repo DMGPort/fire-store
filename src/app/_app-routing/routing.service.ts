@@ -21,6 +21,9 @@ export class RoutingService {
   toDetails(category){
     this.router.navigate(["/store/" + category.toLowerCase() + "/details" ]);
   }
+  toBasket(){
+    this.router.navigate(["basket/"]);
+  }
   
   goBack(){
      this.location.back();

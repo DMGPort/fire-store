@@ -8,10 +8,11 @@ import { MdDialogModule } from '@angular/material';
 import { SearchPipe } from './product-search/search-filter.pipe';
 
 import { AppComponent } from './app.component';
-import { MyDataService } from './_services/mydata.service';
+import { BasketGuestService } from './_services/basket-guest.service';
 import { HttpService } from './_services/http.service';
-import { AppRoutingModule } from './_app-routing/app-routing.module';
+import { MyDataService } from './_services/mydata.service';
 import { RoutingService } from './_app-routing/routing.service';
+import { AppRoutingModule } from './_app-routing/app-routing.module';
 
 import { ProductGridComponent } from './product-grid/product-grid.component';
 import { ProductAddComponent } from './product-add/product-add.component';
@@ -24,6 +25,8 @@ import { ProductAddCategoryComponent } from './product-add-category/product-add-
 import { CategoriesGridComponent } from './categories-grid/categories-grid.component';
 import { LogoComponent } from './logo/logo.component';
 import { MenuComponent } from './menu/menu.component';
+import { BasketPreviewComponent } from './basket-preview/basket-preview.component';
+import { BasketListComponent } from './basket-list/basket-list.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,9 @@ import { MenuComponent } from './menu/menu.component';
     ProductAddCategoryComponent,
     CategoriesGridComponent,
     LogoComponent,
-    MenuComponent
+    MenuComponent,
+    BasketPreviewComponent,
+    BasketListComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +60,7 @@ import { MenuComponent } from './menu/menu.component';
       storageBucket: ""
     })
   ],
-  providers: [ MyDataService, HttpService, RoutingService ],
+  providers: [ BasketGuestService, MyDataService, HttpService, RoutingService ],
   bootstrap: [AppComponent],
   entryComponents: [ 
                     ProductAddComponent,

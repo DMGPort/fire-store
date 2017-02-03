@@ -1,16 +1,17 @@
-<div id="top">
-    <div class="nav">
+<div class="topContainer">
+    <div class="top">
         <app-logo class="logo"></app-logo>
         <app-menu class="menuButton"></app-menu>
-        <div class="catNavDiv">
-            <app-categories-nav class="normalCat"></app-categories-nav>
-            <app-categories-nav-burger class="burgerCat"></app-categories-nav-burger>
+        <div class="categoriesNavBar">
+            <app-categories-nav class="normalNav"></app-categories-nav>
+            <app-categories-nav-burger class="burgerNav"></app-categories-nav-burger>
         </div>
         <app-product-search></app-product-search>
     </div>
-    <div class="myfade"></div>
+    <div class="topFade"></div>
 </div>
 <div class="app-content">
     <router-outlet></router-outlet>
 </div>
+<app-basket-preview class="basketPreview navbar-fixed-bottom"></app-basket-preview>
 

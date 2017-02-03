@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BasketGuestService } from '../_services/basket-guest.service';
 import { MyDataService } from '../_services/mydata.service';
 import { RoutingService } from '../_app-routing/routing.service';
 
@@ -11,6 +12,7 @@ export class ProductDetailComponent implements OnInit {
 
   constructor(
     private myDataService:  MyDataService,
+    private basketGuestService:  BasketGuestService,
     private routingService: RoutingService
   ) { }
   
@@ -20,5 +22,9 @@ export class ProductDetailComponent implements OnInit {
 
   goBack(){
     this.routingService.goBack();
+  }
+
+  addToCart(product){
+    this.basketGuestService.addToCart(product.value);
   }
 }

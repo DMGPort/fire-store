@@ -21,7 +21,7 @@ export class MyDataService {
 
   storeUrl: string = 'https://simplestore-2d8ff.firebaseio.com/store';
   defaultDescription = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.";
-  
+ 
   activeList: FirebaseListObservable<Product[]>;
   shirts: FirebaseListObservable<Product[]>;
   hoodies: FirebaseListObservable<Product[]>;
@@ -33,6 +33,11 @@ export class MyDataService {
     this.activeProduct.next(product);
   }
 
+  basketList: Product[] = [];
+  numberInBasket: number = 0;
+  updateNumberInBasket(){
+    this.numberInBasket = this.basketList.length;
+  }
 /*---------------Active Category Start ---------------*/
   categoryName: string = "";
   public activeCategory:BehaviorSubject<Categories> = new BehaviorSubject<Categories>(null);
@@ -56,22 +61,22 @@ export class MyDataService {
 /*---------------Active Category End ---------------*/
   
 /*-------------------- Search Service Start ------- */
-  searchArray: Product[] = [];
+  searchArray: Product[];
   buildSearchList(){
     this.searchArray = [];
       this.getCat()
         .subscribe(category =>{
-        for(let x = 0; x < category.length ; x++ ){
-          this.getProductList(category[x].name)
-            .subscribe(list => {
-              if(list.length > 0){
-                for(let y = 0; y < list.length ; y++ ){
-                  this.searchArray.push(list[y]);
+          for(let x = 0; x < category.length ; x++ ){
+            this.getProductList(category[x].name)
+              .subscribe(list => {
+                if(list.length > 0){
+                  for(let y = 0; y < list.length ; y++ ){
+                    this.searchArray.push(list[y]);
+                  }
                 }
-              }
-            })
-        }
-      })
+              })
+          }
+        })
   }
   getCat(){
     return this.af.database.list('/store/categories');

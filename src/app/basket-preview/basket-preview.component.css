@@ -1,0 +1,10 @@
+.btn{
+    background-color: white;
+}
+.btn:hover{
+    background-color: dimgray;
+}
+.fa{
+    font-size: 30px;
+    padding: 2px;
+}
